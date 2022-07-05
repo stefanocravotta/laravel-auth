@@ -26,4 +26,6 @@ Route::middleware('auth')
             ->group(function(){
                 Route::get('/', 'HomeController@index')
                 ->name('home');
+                Route::get('/index', 'PostController@index')
+                ->name('index');
             });
