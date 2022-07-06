@@ -19,7 +19,7 @@
                 <td><a href="{{ route('admin.posts.show' , $post) }}" class="text-reset">{{ $post->title }}</a></td>
                 <td>
                     <a href="{{ route('admin.posts.show' , $post) }}" class="btn btn-primary">Show</a>
-                    <a class="btn btn-primary" href="#" role="button">Edit</a>
+                    <a class="btn btn-success" href="{{ route('admin.posts.edit' , $post) }}" role="button">Edit</a>
                     <form
                     class="d-inline"
                     >
