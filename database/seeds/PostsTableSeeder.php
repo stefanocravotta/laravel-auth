@@ -18,7 +18,6 @@ class PostsTableSeeder extends Seeder
             $new_post->title = $faker->sentence();
             $new_post->slug = Post::generateSlug($new_post->title);
             $new_post->description = $faker->paragraph();
-            $new_post->image = $faker->image(null, 640, 480);
             $new_post->save();
         }
     }

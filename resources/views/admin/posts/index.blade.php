@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -14,8 +14,17 @@
         @foreach ($posts as $post)
             <tr>
                 <th scope="row">{{ $post->id }}</th>
-                <td>{{ $post->title }}</td>
-                <td>XXX</td>
+                <td><a href="#" class="text-reset">{{ $post->title }}</a></td>
+                <td>
+                    <a class="btn btn-success" href="#" role="button">Show</a>
+                    <a class="btn btn-primary" href="#" role="button">Edit</a>
+                    <form
+                    class="d-inline"
+                    >
+                    @csrf
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
       </table>
