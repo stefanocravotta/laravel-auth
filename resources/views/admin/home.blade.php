@@ -19,6 +19,15 @@
                     <h3>Bentornato {{ Auth::user()->name }}</h3>
                 </div>
             </div>
+            <div class="card mt-4">
+                <div class="card-header">Le mie attivit&agrave;</div>
+
+                <div class="card-body">
+                    <a class="mr-3" href="http://localhost:8888/phpMyAdmin5/">Link del DB</a>
+                    <a class="mr-3 text-reset" href="{{ route('admin.posts.index') }}">Elenco dei post</a>
+                    <a class="mr-3 text-reset" href="{{ route('admin.posts.create') }}">Crea un nuovo post</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -16,6 +16,12 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Js -->
+    <link rel="stylesheet" href="{{ asset('js/app.js') }}">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -27,10 +33,13 @@
                         Boolpress pubblico
                     </a>
                 @auth
-                    <a class="navbar-brand" href="{{ route('admin.posts.index') }}">
+                    <a class="nav-link text-white" href="{{ route('admin.index') }}">
+                        Dashboard
+                    </a>
+                    <a class="nav-link text-white" href="{{ route('admin.posts.index') }}">
                         Elenco dei post
                     </a>
-                    <a class="navbar-brand" href="{{ route('admin.posts.create') }}">
+                    <a class="nav-link text-white" href="{{ route('admin.posts.create') }}">
                         Crea un nuovo post
                     </a>
                 @endauth

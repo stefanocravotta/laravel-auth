@@ -30,3 +30,62 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+
+$().ready(function(){
+
+    /* FORM CREATE */
+    $('#form-create').submit(function(event){
+        $('#error-create-title').hide();
+        if($('#title-create').val().length === 0){
+            $('#title-create').addClass('is-invalid');
+            $('#error-create-title').show('slow').text('Il titolo è un campo obbligatorio').fadeOut(5000);
+        }else if($('#title-create').val().length < 3){
+            $('#title-create').addClass('is-invalid');
+            $('#error-create-title').show('slow').text('Il titolo deve avere almeno 3 caratteri').fadeOut(5000);
+        }else{
+            $('#title-create').removeClass('is-invalid');
+        }
+
+        $('#error-create-content').hide();
+        if($('#content-create').val().length === 0){
+            $('#content-create').addClass('is-invalid');
+            $('#error-create-content').show('slow').text('Il contenuto è un campo obbligatorio').fadeOut(5000);
+        }else if($('#content-create').val().length < 3){
+            $('#content-create').addClass('is-invalid');
+            $('#error-create-content').show('slow').text('Il contenuto deve avere almeno 10 caratteri').fadeOut(5000);
+        }else{
+            $('#content-create').removeClass('is-invalid');
+        }
+
+        event.preventDefault();
+    });
+
+    /* FORM EDIT */
+    $('#form-edit').submit(function(event){
+        $('#error-edit-title').hide();
+        if($('#title-edit').val().length === 0){
+            $('#title-edit').addClass('is-invalid');
+            $('#error-edit-title').show('slow').text('Il titolo è un campo obbligatorio').fadeOut(5000);
+        }else if($('#title-edit').val().length < 3){
+            $('#title-edit').addClass('is-invalid');
+            $('#error-edit-title').show('slow').text('Il titolo deve avere almeno 3 caratteri').fadeOut(5000);
+        }else{
+            $('#title-edit').removeClass('is-invalid');
+        }
+
+        $('#error-edit-content').hide();
+        if($('#content-edit').val().length === 0){
+            $('#content-edit').addClass('is-invalid');
+            $('#error-edit-content').show('slow').text('Il contenuto è un campo obbligatorio').fadeOut(5000);
+        }else if($('#content-edit').val().length < 3){
+            $('#content-edit').addClass('is-invalid');
+            $('#error-edit-content').show('slow').text('Il contenuto deve avere almeno 10 caratteri').fadeOut(5000);
+        }else{
+            $('#content-edit').removeClass('is-invalid');
+            event
+        }
+
+        event.preventDefault();
+    });
+});

@@ -15,27 +15,29 @@
             @endif
         <div class="row">
             <div class="col-8 offset-2">
-                <form action="{{ route('admin.posts.store') }}"
+                <form id="form-create" action="{{ route('admin.posts.store') }}"
                 method="POST">
                 @csrf
                     <div class="mb-3">
                       <label for="title" class="form-label">Titolo</label>
                       <input type="text" name="title"
                       value="{{ old('title') }}"
-                      class="form-control @error('title') is-invalid @enderror" id="title"
+                      class="form-control @error('title') is-invalid @enderror" id="title-create"
                       placeholder="Inserisci un titolo">
                       @error('title')
                         <p class="text-danger">{{ $message }}</p>
                       @enderror
+                       <p class="text-danger" id="error-create-title"></p>
                     </div>
                     <div class="mb-3">
                       <label for="content" class="form-label">Contenuto del post</label>
                       <textarea
-                      name="content" id="content"
+                      name="content" id="content-create"
                       class="form-control @error('content') is-invalid @enderror" cols="30" rows="10">{{ old('content') }}</textarea>
                       @error('title')
                         <p class="text-danger">{{ $message }}</p>
                       @enderror
+                      <p class="text-danger" id="error-create-content"></p>
                     </div>
                     <button type="submit" class="btn btn-primary">Crea</button>
                   </form>
