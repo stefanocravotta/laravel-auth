@@ -14,9 +14,9 @@
         @foreach ($posts as $post)
             <tr>
                 <th scope="row">{{ $post->id }}</th>
-                <td><a href="#" class="text-reset">{{ $post->title }}</a></td>
+                <td><a href="{{ route('admin.posts.show' , $post) }}" class="text-reset">{{ $post->title }}</a></td>
                 <td>
-                    <a class="btn btn-success" href="#" role="button">Show</a>
+                    <a href="{{ route('admin.posts.show' , $post) }}" class="btn btn-primary">Show</a>
                     <a class="btn btn-primary" href="#" role="button">Edit</a>
                     <form
                     class="d-inline"
@@ -28,5 +28,6 @@
             </tr>
         @endforeach
       </table>
+      {{ $posts->links() }}
 </div>
 @endsection
